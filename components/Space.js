@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import Game from '../game/Game';
 
 const data = {
   'You': {
@@ -13,6 +14,9 @@ const data = {
 }
 
 class Space extends Component {
+  onContextCreate = context => {
+    this.game = new Game(context);
+  }
 	render() {
     const p = data[this.props.name];
 		return (
